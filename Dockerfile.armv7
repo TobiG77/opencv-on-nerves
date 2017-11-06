@@ -29,7 +29,7 @@ RUN unzip -x opencv-${OPENCV_VERSION}.zip && \
     mkdir -p ${OPENCV_PREFIX}/opencv-static && \
     cmake \
         -DBUILD_SHARED_LIBS=OFF \
-        -DCMAKE_INSTALL_PREFIX=${OPENCV_PREFIX}/opencv-static && \
+        -DCMAKE_INSTALL_PREFIX=${OPENCV_PREFIX}/opencv-static ../ && \
     make install
 
 FROM dockcross/linux-armv7
